@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/provider/theme-provider";
 import { inter } from "@/lib/fonts";
+import ToggleTheme from "@/components/toggle-theme";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,14 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased min-h-screen`}>
+      <body
+        className={`${inter.className} antialiased min-h-screen dark:bg-neutral-900`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="p-5 max-w-screen-2xl mx-auto">{children}</main>
+          <main className="max-w-screen-2xl mx-auto">{children}</main>
+          <ToggleTheme />
         </ThemeProvider>
       </body>
     </html>

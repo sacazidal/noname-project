@@ -7,7 +7,7 @@ import { poppins } from "@/lib/fonts";
 
 function NotFoundPage() {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen flex items-center justify-center px-5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
